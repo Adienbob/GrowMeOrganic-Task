@@ -72,7 +72,7 @@ export default function App() {
           onSelectAllChange={(event) => {
             setSelectedUsers([])
             setRemaining(undefined)
-            panelRef.current?.toggle(event)
+            panelRef.current?.toggle(event as any)
           }}
           onSelectionChange={(e) => {
             setSelectedUsers(e.value)
@@ -98,7 +98,7 @@ export default function App() {
           <Column field="date_end" header="End Year" />
         </DataTable>
         <div className="overlay">
-          <OverlayPanel ref={panelRef} appendTo={document.querySelector(".tableContainer")}>
+          <OverlayPanel ref={panelRef}>
             <label htmlFor="row-selector">
               <input id='row-selector' type="number" placeholder='select rows...' />
               <button onClick={() => {
